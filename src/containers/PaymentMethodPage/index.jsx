@@ -3,6 +3,7 @@ import DocumentMeta from 'react-document-meta';
 import { TitleMetaContent, DescriptionMetaContent, KeywordsMetaContent } from 'utils/constants';
 
 import { Button, Col, Image, Row } from 'react-bootstrap';
+import { routeActions } from 'redux-simple-router';
 
 import { ButtonWithImage } from 'components/ButtonWithImage';
 import { PaymentMethod } from 'components/PaymentMethod';
@@ -21,8 +22,6 @@ const creditCardIcon = require('./files/creditCard.png');
 const bcaClickPayIcon = require('./files/bcaClickPay.png');
 const epayBriIcon = require('./files/epayBri.png');
 const mandiriClickPayIcon = require('./files/mandiriClickPay.png');
-
-var InfiniteScroll = require('react-infinite-scroll')(React);
 
 const metaData = {
   title: TitleMetaContent,
@@ -67,12 +66,13 @@ const paymentMethods =
 
 @connect(
   mapStateToProps,
-  dispatch => bindActionCreators({ changePaymentMethod }, dispatch)
+  dispatch => bindActionCreators({ push: routeActions.push, changePaymentMethod }, dispatch)
 )
 export class PaymentMethodPage extends Component {
   constructor(props) {
     super(props);
     this._handlePaymentMethodClick = this._handlePaymentMethodClick.bind(this);
+    this._handleNextButtonClick = this._handleNextButtonClick.bind(this);
   }
 
   render() {  
@@ -109,7 +109,7 @@ export class PaymentMethodPage extends Component {
             { paymentMethods.map((paymentMethod) => <Row onClick={this._handlePaymentMethodClick.bind(this, paymentMethod.id)}> <PaymentMethod key={ paymentMethod.id } caption={ paymentMethod.caption } imageSrc={ paymentMethod.imgSrc } selected={paymentMethod.id == paymentMethodId}/> </Row>) }
             <Row className="bottom-border"/>
             <Row >
-              <Button className="rectangle-3" block>Next</Button>
+              <Button className="rectangle-3" block onClick={ this._handleNextButtonClick }>Next</Button>
             </Row>
           </div>
         </div>
@@ -122,6 +122,21 @@ export class PaymentMethodPage extends Component {
       changePaymentMethod
     } = this.props;
     changePaymentMethod(id);
+  }
+
+  _handleNextButtonClick(id) {
+    const {
+      push,
+      paymentMethodId
+    } = this.props;
     
+    if (paymentMethodId === 1) {
+      push("/creditcard");
+    } else if (paymentMethodId === -1) {
+      alert("You haven't chosen the payment method.");
+    } else {
+      alert("Please choose Credit Card as your payment method.");
+
+    }
   }
 }
