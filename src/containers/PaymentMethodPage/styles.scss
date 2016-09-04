@@ -1,0 +1,62 @@
+:local(.styles) {
+  hr {
+    display: block;
+    height: 10px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 30px -30px;
+    padding: 0;
+	}
+
+  .title {
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: center;
+    color: #285e9c;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: center;
+    color: #a2a2a2;
+    margin-bottom: 20px;
+  }
+
+  .instruction {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    color: #a2a2a2;
+    margin-bottom: 20px;
+  }
+
+	.high-layer {
+    z-index: 1;
+	}
+
+	.bottom-border {
+  	border-bottom: thin solid #f2f2f2;
+    z-index: 1;
+    margin-bottom: 20px;
+  }
+
+  .rectangle-3 {
+    text-align: center;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #1ace9b;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.11);
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+}

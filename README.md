@@ -1,0 +1,1 @@
+Simple React - Redux implementation for managing your financial stuff

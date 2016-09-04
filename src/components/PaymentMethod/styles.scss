@@ -1,0 +1,37 @@
+:local(.styles) {
+  .center-text {
+    text-align: center;
+  }
+
+  .box-container {
+  	border-top: thin solid #f2f2f2;
+    z-index: 1;
+    height: 40px;
+  }
+
+  .mask {
+  	width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 5px;
+  }
+
+  .checklist-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: 5px;
+  }
+
+  .caption {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    color: #aeaeae;
+    line-height: 40px;
+  }
+}

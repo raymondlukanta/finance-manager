@@ -1,0 +1,27 @@
+:local(.styles) {
+  .center-text {
+    text-align: center;
+  }
+
+  .box-container {
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #e3e3e3;
+  }
+
+  .box-container-selected {
+    border-radius: 4px;
+    border-color: #1ace9b;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(26, 206, 155, 1);
+    border: solid 2px #1ace9b;
+  }
+
+  .mask {
+  	width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
